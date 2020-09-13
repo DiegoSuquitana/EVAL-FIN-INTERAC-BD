@@ -1,12 +1,25 @@
-
-
-
 class EventsManager {
     constructor() {
         this.obtenerDataInicial()
     }
 
-
+    logoutRequest(){
+      $.ajax({
+        url: '../server/logout.php',
+        dataType: "text",
+        cache: false,
+        processData: false,
+        contentType: false,
+        type: 'GET',
+        success: function(php_response){
+          window.location.href = 'index.html';
+        },
+        error: function(){
+          alert("error en la comunicación con el servidor");
+        }
+      })
+    }
+  
     obtenerDataInicial() {
         let url = '../server/getEvents.php'
         $.ajax({
@@ -206,7 +219,12 @@ $(function(){
   })
 });
 
-
+$(function(){
+  var e = new EventsManager();
+  $('#logout').click(function(event){
+    e.logoutRequest()
+  })
+});
 
 function initForm(){
   $('#start_date, #titulo, #end_date').val('');
