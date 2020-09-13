@@ -1,6 +1,6 @@
 <?php
 
-require('./getEvents.php');
+require('./conector.php');
 
 $con = new ConectorBD('localhost','t_general','12345');
 
