@@ -8,7 +8,7 @@ $response['conexion'] = $con->initConexion('agenda_db');
 
 if ($response['conexion']=='OK') {
   $resultado_consulta = $con->consultar(['usuario'],
-  ['email', 'psw'], 'WHERE email="'.$_POST['username'].'"');
+  ['email', 'psw', 'id'], 'WHERE email="'.$_POST['username'].'"');
 
   if ($resultado_consulta->num_rows != 0) {
     $fila = $resultado_consulta->fetch_assoc();
@@ -16,6 +16,7 @@ if ($response['conexion']=='OK') {
       $response['acceso'] = 'concedido';
       session_start();
       $_SESSION['username']=$fila['email'];
+      $_SESSION['id']=$fila['id'];
     }else {
       $response['motivo'] = 'Contraseña incorrecta';
       $response['acceso'] = 'rechazado';
