@@ -123,9 +123,6 @@ class EventsManager {
               })
             }
 
-
-
-
           }else {
             alert(data.msg)
           }
@@ -219,12 +216,12 @@ $(function(){
   })
 });
 
-$(function(){
-  var e = new EventsManager();
-  $('#logout').click(function(event){
-    e.logoutRequest()
-  })
-});
+//$(function(){
+//  var e = new EventsManager();
+//  $('#logout').click(function(event){
+//    e.logoutRequest()
+//  })
+//});
 
 function initForm(){
   $('#start_date, #titulo, #end_date').val('');
