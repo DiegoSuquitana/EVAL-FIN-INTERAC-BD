@@ -106,6 +106,7 @@ class EventsManager {
         data: form_data,
         type: 'POST',
         success: (data) =>{
+          //return console.log(data); //para ver en que parte del php me quedo
           if (data.msg=="OK") {
             alert('Se ha añadido el evento exitosamente')
             if (document.getElementById('allDay').checked) {
@@ -216,12 +217,12 @@ $(function(){
   })
 });
 
-//$(function(){
-//  var e = new EventsManager();
-//  $('#logout').click(function(event){
-//    e.logoutRequest()
-//  })
-//});
+$(function(){
+  var e = new EventsManager();
+  $('#logout').click(function(event){
+    e.logoutRequest()
+  })
+});
 
 function initForm(){
   $('#start_date, #titulo, #end_date').val('');
