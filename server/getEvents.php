@@ -13,7 +13,7 @@ if (isset($_SESSION['username'])) {
     while ($fila = $resultado->fetch_assoc()) { 
       $response['eventos'][$i]['id']=$fila['id'];
       $response['eventos'][$i]['fk_usuario']=$fila['fk_usuario'];
-      $response['eventos'][$i]['titulo']=$fila['titulo'];
+      $response['eventos'][$i]['title']=$fila['titulo'];
       $response['eventos'][$i]['start']=$fila['fechaInicio'];
       $response['eventos'][$i]['end']=$fila['fechaFinalizacion'];
       $response['eventos'][$i]['allDay']=$fila['diaCompleto'];
