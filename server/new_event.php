@@ -38,7 +38,7 @@
     $response['msg']= 'No se ha iniciado una sesión';
   }
 
-  echo json_encode($data); //validar los datos que estoy enviado
-  //echo json_encode($response);
+  //echo json_encode($data); //validar los datos que estoy enviado
+  echo json_encode($response);
 
  ?>
