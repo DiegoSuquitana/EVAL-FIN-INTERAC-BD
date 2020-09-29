@@ -172,17 +172,26 @@ class EventsManager {
             start_hour,
             end_hour
 
+            //return console.log(evento.start)
+
         start_date = start.substr(0,10)
         end_date = end.substr(0,10)
-        start_hour = start.substr(11,8)
-        end_hour = end.substr(11,8)
-
+        start_hour = evento.horaInicio
+        end_hour = evento.horaFinalizacion
+        
+        if(end == "Invalid date"){    
+          form_data.append('end_date',start_date)
+        }
+        else{
+          form_data.append('end_date', end_date)
+        }
 
         form_data.append('id', id)
         form_data.append('start_date', start_date)
-        form_data.append('end_date', end_date)
         form_data.append('start_hour', start_hour)
         form_data.append('end_hour', end_hour)
+        
+        
 
         $.ajax({
           url: '../server/update_event.php',
@@ -193,6 +202,8 @@ class EventsManager {
           data: form_data,
           type: 'POST',
           success: (data) =>{
+            //return console.log(data); //para ver en que parte del php me quedo
+
             if (data.msg=="OK") {
               alert('Se ha actualizado el evento exitosamente')
             }else {
