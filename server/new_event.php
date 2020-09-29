@@ -12,7 +12,9 @@
      
       if($_POST["allDay"]=="true"){    
         $allDay  = 1; 
-        $data['fechaFinalizacion'] = "'".$_POST['start_date']."'";    
+        $data['horaInicio'] = "'5:00:00'";
+        $data['fechaFinalizacion'] = "'".$_POST['start_date']."'";  
+        $data['horaFinalizacion'] = "'23:30:00'";  
         $data['diaCompleto'] = "'".$allDay."'";
         
       }else{
