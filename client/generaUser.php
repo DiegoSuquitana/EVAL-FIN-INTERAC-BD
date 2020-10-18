@@ -4,6 +4,8 @@ require('../server/conector.php');
 
 $ingreso = 1;
 
+echo "INSERCION DE USUARIOS" . "<br>";
+
 if($ingreso == 1)
 {
     $data['nombreCompleto'] = "'DIEGO S 1'";
@@ -17,7 +19,7 @@ if($ingreso == 1)
         
         if ($con->insertData('usuario', $data)) {
 
-            echo "exito en la inserción - USUARIO 1";
+            echo "exito en la inserción - USUARIO 1". "<br>";;
             $ingreso = 2;
 
         } else {
@@ -33,7 +35,7 @@ if($ingreso == 2)
     $data['nombreCompleto'] = "'DIEGO R 2'";
     $data['fechaNacimiento'] = "'2011/11/11'";
     $data['email'] = "'DiegoR2@hotmail.com'";
-    $data['psw'] = "'" . password_hash("12345", PASSWORD_DEFAULT) . "'";
+    $data['psw'] = "'" . password_hash("123456", PASSWORD_DEFAULT) . "'";
 
     $con = new ConectorBD('localhost', 't_create_user', '12345');
     $response['conexion'] = $con->initConexion('agenda_db');
@@ -41,7 +43,7 @@ if($ingreso == 2)
     if ($response['conexion'] == 'OK') {
         if ($con->insertData('usuario', $data)) {
 
-            echo "exito en la inserción  - USUARIO 2";
+            echo "exito en la inserción  - USUARIO 2". "<br>";
             $ingreso = 3;
 
         } else {
@@ -57,7 +59,7 @@ if($ingreso == 3)
     $data['nombreCompleto'] = "'DIEGO G 3'";
     $data['fechaNacimiento'] = "'2020/12/20'";
     $data['email'] = "'DiegoG3@hotmail.com'";
-    $data['psw'] = "'" . password_hash("12345", PASSWORD_DEFAULT) . "'";
+    $data['psw'] = "'" . password_hash("123457", PASSWORD_DEFAULT) . "'";
 
     $con = new ConectorBD('localhost', 't_create_user', '12345');
     $response['conexion'] = $con->initConexion('agenda_db');
@@ -65,7 +67,7 @@ if($ingreso == 3)
     if ($response['conexion'] == 'OK') {
         if ($con->insertData('usuario', $data)) {
 
-            echo "exito en la inserción  - USUARIO 3";
+            echo "exito en la inserción  - USUARIO 3". "<br>";
             $ingreso ++;
 
         } else {
