@@ -7,7 +7,7 @@ $data['fechaNacimiento'] = "'" . $_POST['fechaNacimiento'] . "'";
 $data['email'] = "'" . $_POST['email'] . "'";
 $data['psw'] = "'" . password_hash($_POST['contrasena'], PASSWORD_DEFAULT) . "'";
 
-$con = new ConectorBD('localhost', 't_create_user', '12345');
+$con = new ConectorBD('localhost', 'root', '');
 $response['conexion'] = $con->initConexion('agenda_db');
 
 if ($response['conexion'] == 'OK') {
