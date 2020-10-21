@@ -11,7 +11,7 @@ if (isset($_SESSION['username'])) {
 
 	$response['query'] = $query; 
 
-  $con = new ConectorBD('localhost', 't_delete_event', '12345');
+  $con = new ConectorBD('localhost', 'root', '');
   if ($con->initConexion('agenda_db')=='OK') {
   	if ($con->eliminarRegistro('evento', $query )) { 
         $response['msg']= 'OK';
