@@ -6,7 +6,7 @@ session_start();
 
 if (isset($_SESSION['username'])) {
 
-    $con = new ConectorBD('localhost', 't_selector', '12345');
+    $con = new ConectorBD('localhost', 'root', '');
   if ($con->initConexion('agenda_db')=='OK') {
     $resultado = $con->consultar(['evento'], ['*'], "WHERE fk_usuario ='".$_SESSION['id']."'"); 
     $i=0;
