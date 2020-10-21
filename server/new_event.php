@@ -5,7 +5,7 @@
   session_start();
 
   if (isset($_SESSION['username'])) {
-    $con = new ConectorBD('localhost', 'root', '12345');
+    $con = new ConectorBD('localhost', 'root', '');
     if ($con->initConexion('agenda_db')=='OK') {
       $data['titulo'] = "'".$_POST['titulo']."'";
       $data['fechaInicio'] = "'".$_POST['start_date']."'";
