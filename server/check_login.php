@@ -2,7 +2,7 @@
 
 require('./conector.php');
 
-$con = new ConectorBD('localhost','t_general','12345');
+$con = new ConectorBD('localhost','root','');
 
 $response['conexion'] = $con->initConexion('agenda_db');
 
