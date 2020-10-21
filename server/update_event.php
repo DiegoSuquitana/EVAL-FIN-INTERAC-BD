@@ -16,7 +16,7 @@
    $query = 'id = '.$data['id'];
    $response['query'] = $query;
  
-   $con = new ConectorBD('localhost', 't_update_event', '12345');
+   $con = new ConectorBD('localhost', 'root', '');
    if ($con->initConexion('agenda_db')=='OK') {
        if ($con->actualizarRegistro('evento', $data, $query)) { 
          $response['msg']= 'OK';
