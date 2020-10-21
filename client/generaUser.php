@@ -13,7 +13,7 @@ if($ingreso == 1)
     $data['email'] = "'DiegoR1@hotmail.com'";
     $data['psw'] = "'".password_hash("12345",PASSWORD_DEFAULT)."'";
 
-    $con = new ConectorBD('localhost', 't_create_user', '12345');
+    $con = new ConectorBD('localhost', 'root', '');
     $response['conexion'] = $con->initConexion('agenda_db');
     if ($response['conexion'] == 'OK') {
         
@@ -37,7 +37,7 @@ if($ingreso == 2)
     $data['email'] = "'DiegoR2@hotmail.com'";
     $data['psw'] = "'" . password_hash("123456", PASSWORD_DEFAULT) . "'";
 
-    $con = new ConectorBD('localhost', 't_create_user', '12345');
+    $con = new ConectorBD('localhost', 'root', '');
     $response['conexion'] = $con->initConexion('agenda_db');
 
     if ($response['conexion'] == 'OK') {
@@ -61,7 +61,7 @@ if($ingreso == 3)
     $data['email'] = "'DiegoG3@hotmail.com'";
     $data['psw'] = "'" . password_hash("123457", PASSWORD_DEFAULT) . "'";
 
-    $con = new ConectorBD('localhost', 't_create_user', '12345');
+    $con = new ConectorBD('localhost', 'root', '');
     $response['conexion'] = $con->initConexion('agenda_db');
 
     if ($response['conexion'] == 'OK') {
